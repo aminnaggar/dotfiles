@@ -1,0 +1,5 @@
+# Add `~/bin` to the `$PATH`
+export PATH="$HOME/bin:$PATH"
+
+# Add `~/Android/platform-tools` to the `$PATH` for adb
+export PATH="$HOME/Android/platform-tools:$PATH"
