@@ -19,6 +19,8 @@ This script will symlink all the dot files to ~:
 	.extra
 	.osx
 
+You must be in the "source" directory when you call this script
+
 OPTIONS:
 	-h		Show this message
 	-f		Force replace .dotfiles if they already exist in ~
