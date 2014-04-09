@@ -185,3 +185,17 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 # Reload the shell (i.e. invoke as a login shell)
 # alias reload="exec $SHELL -l"
+
+
+
+
+##
+# -------------UBUNTU ALIASES
+##
+# Ubuntu-only stuff. Abort if not Ubuntu.
+if [[ "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]] ; then
+
+	# ubuntu package installer helper
+	alias canhaz='apt-get install'
+fi
+
