@@ -18,6 +18,7 @@ This script will symlink all the dot files to ~:
 	.functions
 	.extra
 	.osx
+	.ubuntu
 
 You must be in the "source" directory when you call this script
 
@@ -71,7 +72,7 @@ do
 done
 
 
-files=( .bashrc .bash_profile .path .bash_prompt .exports .aliases .functions .extra .osx )
+files=( .bashrc .bash_profile .path .bash_prompt .exports .aliases .functions .extra .osx .ubuntu )
 
 if $delete ; then
 	for file in "${files[@]}"; do
