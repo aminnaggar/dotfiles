@@ -9,7 +9,7 @@ export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignorespace:ignoredups
 # Keeps history clean, by not saving pwd,ls,clear....
-export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
+export HISTIGNORE="ls:cd:cd -:pwd:la:cls:exit:date:* --help"
 
 
 ##
