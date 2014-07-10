@@ -80,16 +80,22 @@ alias gurl='curl --compressed'
 # Get week number
 alias week='date +%V'
 
+# Gets a filename friendly date
+alias fdate='date +%d_%m_%Y'
+
+# Gets today's date
+alias today='date +%d - %m - %Y'
+
 # Get date formated for work
 alias workdate='date +%d-%m-%y\ \ week:\ %V'
-alias wdate='`workdate`'
+alias wdate='workdate'
 
 # Untar mumbo jumbo`
 alias untar='tar -zxvf'
 
 # Get Pay week number
 alias payweek='expr `week` - 2'
-alias pweek='`payweek`'
+alias pweek='payweek'
 
 # Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
@@ -149,9 +155,10 @@ command -v grunt > /dev/null && alias grunt="grunt --stack"
 if [[ "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]] ; then
 
 	# ubuntu package installer helper
-	alias canhaz='apt-get install'
+	alias canhaz='sudo apt-get install'
 	alias canhazInfo='apt-cache show'
 	alias kthxby='apt-get remove --purge'
+	alias dontwant='kthxby'
 fi
 
 

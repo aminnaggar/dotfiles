@@ -312,3 +312,10 @@ function np() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX
 }
+
+
+# envoyUsers prints all users on the envoy server with their accompanying phone numbers
+function envoyUsers() {
+	echo "Some Stuff"
+	mongo --nodb --eval 'var conn = new Mongo(); db=conn.getDB("Envoy"); db.users.find().forEach(function(myDoc){print("\nuser:\t" + myDoc.name + "\nphone:\t" + myDoc.phoneNumber);})'
+}
