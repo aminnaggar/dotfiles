@@ -1,3 +1,4 @@
+#!/bin/bash
 # Simple calculator
 function calc() {
 	local result=""
@@ -318,3 +319,45 @@ function tre() {
 function envoyUsers() {
 	mongo --nodb --eval 'var conn = new Mongo(); db=conn.getDB("Envoy"); db.users.find().forEach(function(myDoc){print("\nuser:\t" + myDoc.name + "\nphone:\t" + myDoc.phoneNumber);})'
 }
+
+# envoyVerifications prints all the verification entries waiting right now
+function envoyVerifications(){
+	mongo --nodb --eval 'var conn = new Mongo(); db=conn.getDB("Envoy"); db.verifications.find()'
+}
+
+
+# `mou` with no arguments opens the current directory in Mou, otherwise
+# opens the given location
+function mou(){
+	if [ $# -eq 0 ]; then
+		open . -a Mou
+	else
+		open "$@" -a Mou
+	fi
+}
+
+# `setUpHooks` 
+function setUpHooks(){
+	local hooksDir=".git/hooks"
+	local candidGitSnap="$HOME/sbin/candidGitSnap"
+	if [ -d "$hooksDir" ]; then
+		
+		if [ ! -f $hooksDir/post-commit ]; then
+			echo -e "#!/bin/bash\n" > $hooksDir/post-commit
+			chmod 777 $hooksDir/post-commit
+		fi
+
+		echo -e "\nsource $candidGitSnap" >> $hooksDir/post-commit
+
+	else
+		echo "Could not find .git/hooks"
+	fi	
+}
+
+
+# 'croot' takes you to the root of git
+function croot(){
+	cd "$(git rev-parse --show-toplevel)"
+}
+
+

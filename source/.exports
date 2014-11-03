@@ -1,3 +1,4 @@
+#!/bin/bash
 # make Sublime the default editor
 export EDITOR="sublime"
 
@@ -8,8 +9,8 @@ export EDITOR="sublime"
 export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignorespace:ignoredups
-# Keeps history clean, by not saving pwd,ls,clear....
-export HISTIGNORE="ls:cd:cd -:pwd:la:cls:exit:date:* --help"
+# Keeps history clean, by not saving pwd,ls,clear...., and an "rm *" just for safety
+export HISTIGNORE="ls:cd:cd -:pwd:la:cls:exit:date:* --help:rm *"
 
 
 ##
