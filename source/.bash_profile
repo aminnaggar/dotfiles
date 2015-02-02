@@ -39,3 +39,9 @@ done
 # cycle through Tabbed results
 # other options: complete
 bind TAB:menu-complete
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# run the git completeion script
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi

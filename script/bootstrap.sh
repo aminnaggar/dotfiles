@@ -71,8 +71,7 @@ do
 	esac
 done
 
-
-files=( .bashrc .bash_profile .path .bash_prompt .exports .aliases .functions .extra .osx .ubuntu )
+files=( .bashrc .bash_profile .path .bash_prompt .exports .aliases .functions .extra .osx .ubuntu .git-completion.bash )
 
 if $delete ; then
 	for file in "${files[@]}"; do
