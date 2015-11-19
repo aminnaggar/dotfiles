@@ -31,3 +31,6 @@ export MANPAGER="less -X"
 
 # Always enable colored `grep` output
 export GREP_OPTIONS="--color=auto"
+
+# Export node modules variable
+export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules

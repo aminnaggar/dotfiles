@@ -9,7 +9,7 @@ export NODE_PATH="$HOME/.npm-packages:$HOME/.node/lib/node_modules:$NODE_PATH"
 export PATH="$HOME/bin:$PATH"
 
 # Add `~/sbin` to the `$PATH`
-export PATH="$HOME/sbin:$PATH"
+export PATH="$HOME/sbin:/usr/local/sbin:$PATH"
 
 # Add `~/Android/platform-tools` to the `$PATH` for adb
 export PATH="$HOME/Android/platform-tools:$PATH"
