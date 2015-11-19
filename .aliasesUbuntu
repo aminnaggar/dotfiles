@@ -1,0 +1,15 @@
+#!bash
+
+# Ubuntu-only stuff. Abort if not Ubuntu.
+if ! [[ "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]] ; then
+  exit 1
+fi
+
+# ------------------------------------------------------------------
+# | ubuntu package installer helpers                               |
+# ------------------------------------------------------------------
+
+alias canhaz="sudo apt-get install"
+alias canhazInfo="apt-cache show"
+alias kthxby="apt-get remove --purge"
+alias dontwant=kthxby
