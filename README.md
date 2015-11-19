@@ -1,4 +1,6 @@
-# Paul's dotfiles
+# Amin's dotfiles
+
+## Shamelessly stolen from @paulirish
 
 * I maintain this repo as *my* dotfiles, but I'm keenly aware people are using it for theirs.
 * You're quite welcome to make suggestions, however I may decline if it's not of personal value to me.
@@ -10,7 +12,7 @@
 * fork this to your own acct
 * clone that repo
 * read and run parts of `setup-a-new-machine.sh`
-* read and run `symlink-setup.sh` 
+* read and run `symlink-setup.sh`
   * git config needs attention, read the notes.
 * use it. yay!
 
@@ -19,7 +21,10 @@
 * commit/push changes you want.
 * you can also hypothetically cherry-pick commits from me and mathias and our fork ecosystem.
 
+## what it looks like:
 
+![bash1](http://imgur.com/JhN9tTQ.png)
+![bash2](http://imgur.com/s0M21Fg.png)
 
 ## my favorite parts.
 
@@ -85,7 +90,7 @@ Lastly, I use `open .` to open Finder from this path. (That's just available nor
 
 There will be items that don't belong to be committed to a git repo, because either 1) it shoudn't be the same across your machines or 2) it shouldn't be in a git repo. Kick it off like this:
 
-`touch ~/.extra && $EDITOR $_` 
+`touch ~/.extra && $EDITOR $_`
 
 I have some EXPORTS, my PATH construction, and a few aliases for ssh'ing into my servers in there.
 
