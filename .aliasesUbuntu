@@ -2,7 +2,7 @@
 
 # Ubuntu-only stuff. Abort if not Ubuntu.
 if ! [[ "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]] ; then
-  exit 1
+  return 1
 fi
 
 # ------------------------------------------------------------------
