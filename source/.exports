@@ -1,36 +1,38 @@
 #!/bin/bash
-# make Sublime the default editor
-export EDITOR="sublime"
 
-##
-#	HISTORY stuff....
-##
-# Larger bash history (allow 32³ entries; default is 500)
-export HISTSIZE=32768
-export HISTFILESIZE=$HISTSIZE
-export HISTCONTROL=ignorespace:ignoredups
-# Keeps history clean, by not saving pwd,ls,clear...., and an "rm *" just for safety
-export HISTIGNORE="ls:cd:cd -:pwd:la:cls:exit:date:* --help:rm *"
+##############
+##--------Editor......
+##############
+  # make atom the default editor
+  export EDITOR="atom"
 
+##############
+##--------Man Stuff......
+##############
+  # Don’t clear the screen after quitting a manual page
+  export MANPAGER="less -X"
 
-##
-#	MAN stuff........
-##
-# Highlight section titles in manual pages
-export LESS_TERMCAP_md="$ORANGE"
+  # Highlight section titles in manual pages
+  export LESS_TERMCAP_md="$ORANGE"
 
+##############
+##--------MISC
+##############
 
-# Prefer US English and use UTF-8
-export LANG="en_US"
-export LC_ALL="en_US.UTF-8"
+  # Prefer US English and use UTF-8
+  export LC_ALL="en_US.UTF-8"
+  export LANG="en_US"
 
+  # Always enable colored `grep` output
+  export GREP_OPTIONS="--color=auto"
 
-# Don’t clear the screen after quitting a manual page
-export MANPAGER="less -X"
+  export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
+##############
+##--------Colors
+##############
 
-# Always enable colored `grep` output
-export GREP_OPTIONS="--color=auto"
-
-# Export node modules variable
-export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
+  # here's LS_COLORS
+  # github.com/trapd00r/LS_COLORS
+  command -v gdircolors >/dev/null 2>&1 || alias gdircolors="dircolors"
+  eval "$(gdircolors -b ~/.dircolors)"
