@@ -150,7 +150,7 @@ alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET
 
 # `cat` with beautiful colors. requires Pygments installed.
 # 							   sudo easy_install -U Pygments
-alias pcat='pygmentize -O style=monokai -f console256 -g'
+alias pcat='pygmentize -O style=native -f console256 -g'
 
 # git root
 alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
