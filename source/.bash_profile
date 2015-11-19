@@ -5,6 +5,7 @@
 	# * ~/.path can be used to extend `$PATH`.
 	# * ~/.extra can be used for other settings you don’t want to commit.
 	for file in ~/.{extra,path,bash_prompt,exports,aliases,functions}; do
+		echo "$file"
 		[ -r "$file" ] && source "$file"
 	done
 	unset file
@@ -21,16 +22,14 @@
 	export HISTCONTROL=ignoredups:erasedups:ignorespace         # no duplicate entries, ommit space prefixed commands
 	export HISTSIZE=100000                          # big big history (default is 500)
 	export HISTFILESIZE=$HISTSIZE                   # big big history
+	export HISTIGNORE="ls:la:cd:cd -:pwd:cls:exit:date:* --help" # Keeps history clean, by not saving pwd,ls,clear....
 	which shopt > /dev/null && shopt -s histappend  # append to history, don't overwrite it
 
-	# Save and reload the history after each command finishes
-	export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+	# # Save and reload the history after each command finishes
+	# export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+	#
+	# # ^ the only downside with this is [up] on the readline will go over all history not just this bash session.
 
-	# ^ the only downside with this is [up] on the readline will go over all history not just this bash session.
-
-	# Keeps history clean, by not saving pwd,ls,clear....
-	export HISTIGNORE="ls:la:cd:cd -:pwd:cls:exit:date:* --help"
-	export HISTCONTROL=ignorespace:ignoredups
 
 ##############
 ##--------Hooking in other apps…
@@ -95,20 +94,20 @@
 ##--------MISC
 ##############
 	# to help sublimelinter etc with finding my PATHS
-	case $- in
-	   *i*) source ~/.extra
-	esac
+	# case $- in
+	#    *i*) source ~/.extra
+	# esac
 
 	# generic colouriser
-	GRC=`which grc`
-	if [ "$TERM" != dumb ] && [ -n "$GRC" ]
-	    then
-	        alias colourify="$GRC -es --colour=auto"
-	        alias configure='colourify ./configure'
-	        for app in {diff,make,gcc,g++,ping,traceroute}; do
-	            alias "$app"='colourify '$app
-	    done
-	fi
+	# GRC=`which grc`
+	# if [ "$TERM" != dumb ] && [ -n "$GRC" ]
+	#     then
+	#         alias colourify="$GRC -es --colour=auto"
+	#         alias configure='colourify ./configure'
+	#         for app in {diff,make,gcc,g++,ping,traceroute}; do
+	#             alias "$app"='colourify '$app
+	#     done
+	# fi
 
 ##############
 ##--------Globbing
