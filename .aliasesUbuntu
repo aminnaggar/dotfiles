@@ -13,3 +13,4 @@ alias canhaz="sudo apt-get install"
 alias canhazInfo="apt-cache show"
 alias kthxby="apt-get remove --purge"
 alias dontwant=kthxby
+alias open-ports="netstat -ntlp | grep LISTEN"
