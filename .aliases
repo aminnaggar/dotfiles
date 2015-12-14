@@ -39,6 +39,8 @@ alias g="git"
 alias h="history"
 alias j="jobs"
 alias cls="clear"
+alias cya="exit"
+alias bye=cya
 
 
 # ------------------------------------------------------------------
