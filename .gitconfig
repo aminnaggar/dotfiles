@@ -3,7 +3,7 @@
 	b = branch
 	c = commit -am
 	cm = commit -am
-	acm = !git add -A && git commit
+	acm = !git add -A && git commit -am
 	up = pull
 	p = push
 	st = status
