@@ -1,7 +1,9 @@
 [alias]
 	aa = add -A
+	b = branch
 	c = commit -am
 	cm = commit -am
+	acm = !git add -A && git commit
 	up = pull
 	p = push
 	st = status
@@ -10,6 +12,7 @@
 	df = diff --color --color-words --abbrev
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 	co = checkout
+
 
 	# Show the diff between the latest commit and the current state
 	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
