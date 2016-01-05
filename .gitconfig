@@ -6,8 +6,12 @@
 	acm = !git add -A && git commit -am
 	up = pull
 	p = push
+	pl = pull
+	f = flow
+	ff = flow feature
 	st = status
 	s = status -s
+	cl = clone
 	sclone = clone --depth=1
 	df = diff --color --color-words --abbrev
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
