@@ -1,6 +1,7 @@
 #!bash
 
-export DOTFILES_VERSION="v1.0.0"
+export DOTFILES_VERSION="v1.0.2"
+export DOTFILES_DIR="$HOME/dotfiles"
 
 # ------------------------------------------------------------------
 # | Source all dotfiles                                            |

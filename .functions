@@ -96,6 +96,31 @@ function fs() {
 	fi
 }
 
+function dv() {
+  IFS='>' read -r -a result <<< `node $DOTFILES_DIR/scripts/dv.js $@`
+
+  if [ "${result[0]}" == "error" ]; then
+    printf "%s\n" "error - ${result[1]}"
+  elif [ "${result[0]}" == "cd" ]; then
+    cd ${result[1]}
+  elif [ "${result[0]}" == "txt" ]; then
+
+    echo ""
+
+    IFS=',;' read -ra multiLines <<< "${result[1]}"
+    for i in "${multiLines[@]}"; do
+      echo "$i"
+    done
+
+  else
+    for element in "${result[@]}"
+    do
+        echo "$element"
+    done
+  fi
+
+}
+
 
 # ------------------------------------------------------------------
 # | Fuzzy Pattern Searching                                        |

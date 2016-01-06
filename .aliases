@@ -28,7 +28,8 @@ alias brwe=brew
 # alias d="cd ~/Documents/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias dv="cd ~/Development"
+alias dc="cd ~/Documents"
+# alias dv="cd ~/Development"	#replaced with dv function in .functions
 
 
 # ------------------------------------------------------------------
