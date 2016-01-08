@@ -1,0 +1,8 @@
+{
+  "preset": "google",
+  "disallowSpacesInAnonymousFunctionExpression": null,
+  "disallowTrailingWhitespace": null,
+  "maximumLineLength": {"value": 100, "allExcept":["comments"]},
+  "excludeFiles": ["node_modules/**","bower_components"],
+  "validateIndentation": null
+}

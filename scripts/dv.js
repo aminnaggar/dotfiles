@@ -27,11 +27,9 @@ var ERR_INVLD_ARG_NUM = 'invalid number of arguments';
 
 // console.log('from path: ' + process.cwd());
 // console.log('settings path: ' + ALIAS_FILEPATH);
-// console.log(data.options.devFolder);
-
+// console.log(data.aliases.default);
 
 var data = fetchAliasData();
-
 
 if        (process.argv.length <= 2) {              //2 = node dv
   cdToDefault();
@@ -40,6 +38,7 @@ if        (process.argv.length <= 2) {              //2 = node dv
   // argv indexes: node dv [2] [3] [4] [5]
 
   switch (process.argv[2]) {
+    case 'list':
     case 'ls':
       list();
       break;
@@ -52,10 +51,14 @@ if        (process.argv.length <= 2) {              //2 = node dv
       unalias(process.argv[3]);
       break;
     default:
-      errorReq(process.argv[2] + ' command not found');
+      if (!hasAlias(process.argv[2])) errorReq(process.argv[2] + ' command not found');
+      cdToAlias(process.argv[2]);
   }
 }
 
+function hasAlias(alias){
+  return data.aliases[alias] !== undefined;
+}
 
 function alias(alias, path) {
 
@@ -81,6 +84,9 @@ function alias(alias, path) {
 
 function unalias(alias) {
   var msg = '';
+
+  if (alias == 'default') errorReq('\"default\" is reserved and is unsettable');
+
   var exists = data.aliases[alias] !== undefined;
 
   if (exists) {
@@ -116,7 +122,7 @@ function cdToAlias(alias) {
 }
 
 function cdToDefault() {
-  cdTo(data.options.devDir);
+  cdTo(data.aliases.default);
 }
 
 function fetchAliasData() {
@@ -141,7 +147,7 @@ function persistData() {
 }
 
 function errorReq(error) {
-  console.error('error, ' + error);
+  console.error('error: ' + error);
   process.exit(1);
 }
 
